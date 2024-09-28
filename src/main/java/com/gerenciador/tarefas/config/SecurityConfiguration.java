@@ -52,6 +52,9 @@ public class SecurityConfiguration{
                             .requestMatchers(HttpMethod.POST, "/usuarios").hasAuthority(PermissoesEnum.ADMINISTRADOR.toString())
                             .requestMatchers(HttpMethod.POST, "/gerenciador-tarefas").hasAuthority(PermissoesEnum.ADMINISTRADOR.toString())
                             .requestMatchers(HttpMethod.POST,"/tarefas").hasAuthority(PermissoesEnum.ADMINISTRADOR.toString())
+                            .requestMatchers(HttpMethod.DELETE,"/tarefas").hasAuthority(PermissoesEnum.ADMINISTRADOR.toString())
+                            .requestMatchers(HttpMethod.PUT,"/tarefas").hasAuthority(PermissoesEnum.ADMINISTRADOR.toString())
+                            .requestMatchers(HttpMethod.GET,"/tarefas").hasAuthority(PermissoesEnum.USUARIO.toString())
                             .anyRequest()
                             .authenticated();
                 });
