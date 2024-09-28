@@ -26,7 +26,7 @@ public class TarefasController {
     private TarefaService tarefaService;
 
     @PostMapping
-    public ResponseEntity<CreateTarefaResponse> salvarTarefa(@RequestBody CreateTarefaRequest createTarefaRequest) {
+    public ResponseEntity<CreateTarefaResponse> salvarTarefa(@Valid @RequestBody CreateTarefaRequest createTarefaRequest) {
         Tarefa tarefaSalva =  tarefaService.salvarTarefa(createTarefaRequest);
 
         CreateTarefaResponse response = CreateTarefaResponse.builder()
@@ -40,7 +40,7 @@ public class TarefasController {
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<UpdateTarefaResponse> atualizarTarefa(@PathVariable Long id,@Valid @RequestBody UpdateTarefaRequest request) {
+    public ResponseEntity<UpdateTarefaResponse> atualizarTarefa(@PathVariable Long id, @Valid @RequestBody UpdateTarefaRequest request) {
 
         Tarefa tarefaAtualizada = tarefaService.atualizarTarefa(id, request);
 

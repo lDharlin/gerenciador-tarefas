@@ -1,15 +1,9 @@
 package com.gerenciador.tarefas.response;
 
-import com.gerenciador.tarefas.entity.Usuario;
 import com.gerenciador.tarefas.statustarefa.StatusTarefaEnum;
-import jakarta.persistence.Column;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalTime;
 
